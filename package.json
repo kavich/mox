@@ -1,0 +1,16 @@
+{
+  "name": "bun",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "^1.2.19"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "mol_wire_dom": "^0.0.1458",
+    "mol_wire_lib": "^1.0.1476"
+  }
+}
