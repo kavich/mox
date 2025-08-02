@@ -1,0 +1,29 @@
+[install]
+# Configure package installation
+cache = true
+exact = false
+production = false
+
+[install.scopes]
+# Configure scoped registries if needed
+
+[run]
+# Configure script execution
+bun = true
+
+[test]
+# Configure test runner
+preload = []
+
+[build]
+# Configure bundler
+target = "bun"
+minify = false
+sourcemap = "external"
+
+[dev]
+# Configure development server
+port = 3000
+
+[serve.static]
+plugins = ["bun-plugin-tailwind"]

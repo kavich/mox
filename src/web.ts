@@ -1,15 +1,11 @@
-//console.log('working')
-import {App} from "@/components/app/app";
- 
-import { mox_view, type mox_view_content } from "@/components/view/view";
-//const app = new App();
-(window as any)['App'] = App;
-//(window as any)['mox_view'] = mox_view;
+import { MApp } from "@/components/app/app";
+
+(window as any)['MApp'] = MApp;
 
 document?.addEventListener(
-		'DOMContentLoaded',
-		()=> App.autobind(),
-		{ once: true },
-	)
- 
+	'DOMContentLoaded',
+	() => MApp.autobind(),
+	{ once: true },
+)
+
 

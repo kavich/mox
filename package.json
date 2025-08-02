@@ -4,13 +4,15 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "^1.2.19"
+    "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
+    "bun-plugin-tailwind": "^0.0.15",
     "mol_wire_dom": "^0.0.1458",
-    "mol_wire_lib": "^1.0.1476"
+    "mol_wire_lib": "^1.0.1476",
+    "tailwindcss": "^4.1.11"
   }
 }

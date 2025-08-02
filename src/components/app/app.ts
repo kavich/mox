@@ -105,16 +105,13 @@ export class Row extends mox_view {
         return new Column();
     }
 
-
     @$mol_wire_lib.$mol_wire_plex
     Column(id: number): Column {
         return new Column();
     }
     override sub(): readonly mox_view_content[] {
-
         let cols = []
         for (let i = 0; i < 5; i++) {
-
             const col = this.Column(i);
             cols.push(col);
         }
@@ -126,12 +123,8 @@ export class Table extends mox_view {
         return "table"
     }
     @$mol_wire_lib.$mol_wire_solo
-    items(): Job[] {
-        let items = [];
-        for (let i = 0; i < 10; i++) {
-            items.push(new Job(i));
-        }
-        return items;
+    items(): any[]  {
+        return [];
     }
     @$mol_wire_lib.$mol_wire_plex
     Row(id: number): Row {
@@ -142,7 +135,6 @@ export class Table extends mox_view {
         let i = 0;
         let rows = []
         for (const item of this.items()) {
-
             const row = this.Row(i++);
             rows.push(row);
         }
@@ -156,6 +148,13 @@ export class Main extends mox_view {
     @$mol_wire_lib.$mol_wire_solo
     Table() {
         const table = new Table();
+        table.items = () => {
+            return [
+                new Job(1),
+                new Job(2),
+                new Job(3),
+            ];
+        }
         return table
     }
     override sub(): readonly mox_view_content[] {
@@ -165,7 +164,7 @@ export class Main extends mox_view {
     }
 }
 
-export class App extends mox_view {
+export class MApp extends mox_view {
 
     @$mol_wire_lib.$mol_wire_solo
     Sidebar() {
@@ -199,5 +198,5 @@ export class App extends mox_view {
         }
     }
         */
-    static [Symbol.toStringTag] = 'App'
+    static [Symbol.toStringTag] = 'MApp'
 }

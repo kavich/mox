@@ -1,0 +1,8 @@
+
+@import "tailwindcss";
+
+[mapp2_main] {
+    background-color: oklch(0.7 0.1 357);
+    @apply text-white;
+    @apply p-4;
+}
