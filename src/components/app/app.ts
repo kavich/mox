@@ -145,16 +145,16 @@ export class Table extends mox_view {
 
 export class Main extends mox_view {
 
+    private _items = new $mol_wire_lib.$mol_wire_dict<number, Job>();
+    items(): any {
+        return this._items
+    }
+
     @$mol_wire_lib.$mol_wire_solo
     Table() {
         const table = new Table();
-        table.items = () => {
-            return [
-                new Job(1),
-                new Job(2),
-                new Job(3),
-            ];
-        }
+        table.items = () => this.items() as any;
+        this._items.set(1, new Job(1));
         return table
     }
     override sub(): readonly mox_view_content[] {
